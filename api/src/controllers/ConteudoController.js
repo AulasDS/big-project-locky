@@ -29,15 +29,18 @@ class ConteudoController {
         }
     }
 
-    // 2. Listar todo o catálogo
     static async getAll(req, res) {
-        try {
-            // Em uma API real, você adicionaria paginação aqui (limite de itens por página)
-            const conteudos = await Conteudo.find();
-            return res.status(200).json({ data: conteudos });
-        } catch (error) {
-            return res.status(500).json({ message: 'Erro ao listar o catálogo', error: error.message });
-        }
+    try {
+        const { genero } = req.query; // Captura o ?genero=... da URL
+        
+        // Se o usuário passou um gênero, filtra por ele. Se não, traz tudo ({})
+        const filtro = genero ? { genero: genero } : {}; 
+        
+        const conteudos = await Conteudo.find(filtro);
+        return res.status(200).json({ data: conteudos });
+    } catch (error) {
+        return res.status(500).json({ message: 'Erro ao listar o catálogo', error: error.message });
+    }
     }
 
     // 3. Buscar os detalhes de um Filme/Série específico
@@ -100,4 +103,4 @@ class ConteudoController {
     }
 }
 
-module.exports = Conte
+module.exports = ConteudoController;
