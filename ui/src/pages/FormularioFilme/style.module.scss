@@ -1,0 +1,63 @@
+.formWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 80px;
+  background-color: #141414;
+}
+
+.netflixForm {
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 3.5rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 450px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+}
+
+.inputGroup {
+  margin-bottom: 1.5rem;
+
+  label {
+    font-size: 0.85rem;
+    color: #8c8c8c;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  input, textarea {
+    background-color: #333333 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 4px;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+
+    &:focus {
+      background-color: #454545 !important;
+    }
+  }
+}
+
+.submitBtn {
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  padding: 0.85rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+
+  &:hover {
+    background-color: #c40812;
+  }
+}

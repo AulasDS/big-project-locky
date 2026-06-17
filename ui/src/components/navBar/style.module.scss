@@ -1,66 +1,185 @@
-$primary-color: #2563eb;
-$text-color: #1e293b;
-$bg-color: rgba(255, 255, 255, 0.8);
+$netflix-red: #E50914;
+$netflix-black: #141414;
+$text-white: #FFFFFF;
+$text-gray: #E5E5E5;
 
 .navbar {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: $bg-color;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  padding: 1rem 2rem;
-  transition: all 0.3s ease;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  background-color: rgba($netflix-black, 0.85);
+  padding: 1rem 3.5rem;.barraControlesCatalogo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 4%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.controlesEsquerda {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.abaLink {
+  color: #e5e5e5;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s;
+  font-weight: 500;
+
+  &:hover, &.abaAtiva {
+    color: #ffffff;
+    font-weight: 700;
+  }
+}
+
+.controlesDireita {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.searchInputNav {
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid #333;
+  color: #fff;
+  padding: 7px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  outline: none;
+
+  &:focus {
+    border-color: #ffffff;
+  }
+}
+
+.filtroContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #aaa;
+  font-size: 14px;
+
+  select {
+    background: #141414;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+  }
+}
+
+.btnTrocarPerfil {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  padding: 7px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #b81d24;
+  }
+}
+  box-sizing: border-box;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.leftSide {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex: 1; /* Ocupa espaço equivalente na esquerda */
+}
+
+.centerSide {
+  display: flex;
+  justify-content: center;
+  flex: 2; /* Garante que o centro expanda e empurre os outros lados igualmente */
+}
+
+.rightSide {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1; /* Ocupa espaço equivalente na direita */
+}
+
 .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: $primary-color;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: $netflix-red;
   text-decoration: none;
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
+
+  &:hover { color: $netflix-red; }
 }
 
 .navList {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 1.5rem;
+  list-style: none !important;
   margin: 0;
   padding: 0;
 }
 
 .navLink {
-  color: $text-color;
-  text-decoration: none;
+  color: $text-gray;
+  text-decoration: none !important;
+  font-size: 0.85rem;
   font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.2s ease;
-  position: relative;
+}
 
-  &:hover {
-    color: $primary-color;
-  }
+.searchBox {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 400px; /* Largura ideal para a barra centralizada */
+}
 
-  &::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: $primary-color;
-    transition: width 0.2s ease;
-  }
+.searchInput {
+  background: transparent;
+  border: none !important;
+  color: $text-white;
+  font-size: 0.85rem;
+  outline: none !important;
+  width: 100%;
+  
+  &::placeholder { color: #777; }
+}
 
-  &:hover::after {
-    width: 100%;
-  }
+.profileBtn {
+  background-color: $netflix-red;
+  color: $text-white;
+  border: none;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
 }

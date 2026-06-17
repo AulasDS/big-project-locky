@@ -1,7 +1,7 @@
 const express = require('express');
-const produtoRouter = require('../src/routes/UsuarioRouter');
-const clienteRouter = require('../src/routes/ConteudoRouter');
-const compraRouter = require('../src/routes/HistoricoRouter');
+const usuarioRouter = require('../src/routes/UsuarioRouter');
+const conteudoRouter = require('../src/routes/ConteudoRouter');
+const historicoRouter = require('../src/routes/HistoricoRouter');
 
 module.exports = (app) => {
     app.use(express.json());

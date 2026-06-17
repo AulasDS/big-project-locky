@@ -1,0 +1,219 @@
+// Container geral do app
+.appContainer {
+  background-color: #141414;
+  color: #ffffff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.telaHome {
+  padding-bottom: 50px;
+}
+
+// ==========================================================================
+// NAVBAR COM ESTILO ANTIGO (Logo NETFLIX + Links + Controles)
+// ==========================================================================
+.barraControlesCatalogo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4%;
+  height: 68px;
+  background-color: #000000; // Fundo totalmente preto igual ao topo da primeira foto
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.controlesEsquerda {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+// Logotipo Vermelho da Netflix adicionado na barra
+.logoNetflix {
+  color: #e50914;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  font-family: 'Arial Black', Impact, sans-serif;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.abaLink {
+  color: #e5e5e5;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.3s;
+  text-decoration: none;
+
+  &:hover, &.abaAtiva {
+    color: #ffffff;
+    font-weight: bold;
+  }
+}
+
+.controlesDireita {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.searchInputNav {
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid #333;
+  color: #fff;
+  padding: 7px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  outline: none;
+  width: 200px;
+
+  &:focus {
+    border-color: #ffffff;
+  }
+}
+
+.filtroContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 14px;
+
+  select {
+    background: #000;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+  }
+}
+
+// Botão Sair Vermelho idêntico ao da primeira imagem
+.btnTrocarPerfil {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  padding: 7px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #b81d24;
+  }
+}
+
+// ==========================================================================
+// SEÇÃO DE FILMES (Estilo Vertical da foto antiga)
+// ==========================================================================
+.alinhamentoTituloBotao {
+  padding: 20px 4% 0 4%;
+}
+
+.tituloPagina {
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+  margin: 0;
+}
+
+.gradeFilmes {
+  display: grid;
+  // Colunas preparadas para receber os posters em pé (verticais)
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px 4% 40px 4%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cartaoFilme {
+  background-color: #181818; // Fundo cinza escuro igual ao bloco de texto de antes
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3; // Mágica: Força a imagem a ficar vertical (formato cinema)
+    object-fit: cover;
+    display: block;
+  }
+
+  h3 {
+    color: #fff;
+    font-size: 14px;
+    margin: 0;
+    padding: 15px 10px; // Cria o bloco espaçado para o nome do filme embaixo do poster
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: #1c1c1c; // Mantém a base cinza destacada
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    z-index: 5;
+  }
+}
+
+// ==========================================================================
+// TELAS ADICIONAIS (Detalhes e Player)
+// ==========================================================================
+.secaoDetalhes {
+  padding: 40px 4%;
+}
+
+.botaoVoltar {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  &:hover { background: rgba(255, 255, 255, 0.1); }
+}
+
+.containerFilme { display: flex; gap: 40px; margin-top: 20px; }
+.bannerFilme { width: 300px; img { width: 100%; border-radius: 4px; } }
+.infoFilme { flex: 1; }
+.tituloFilme { font-size: 36px; margin-bottom: 10px; }
+.metadados { display: flex; gap: 15px; color: #aaa; margin-bottom: 20px; }
+.sinopse { font-size: 16px; line-height: 1.6; margin-bottom: 30px; }
+.botoesAcoes { display: flex; gap: 15px; margin-bottom: 30px; }
+.btnAssistir { background: #fff; color: #000; border: none; padding: 10px 25px; font-weight: bold; border-radius: 4px; cursor: pointer; }
+.btnMinhaLista { background: rgba(128,128,128,0.5); color: #fff; border: none; padding: 10px 25px; font-weight: bold; border-radius: 4px; cursor: pointer; }
+
+.secaoAvaliacao {
+  margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;
+  textarea { width: 100%; height: 80px; background: #222; border: 1px solid #444; color: #fff; padding: 10px; margin: 15px 0; border-radius: 4px; }
+}
+.estrelas { display: flex; gap: 5px; font-size: 24px; }
+.estrela { cursor: pointer; color: #444; &.ativa { color: #ffb400; } }
+.btnSalvarAvaliacao { background: #e50914; color: #fff; border: none; padding: 10px 20px; font-weight: bold; border-radius: 4px; cursor: pointer; }
+.mensagemSucesso { color: #46d369; margin-top: 10px; }
+
+.secaoPlayer {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #000; z-index: 200; display: flex; flex-direction: column;
+}
+.btnFecharPlayer { background: transparent; border: none; color: #fff; font-size: 18px; padding: 20px; cursor: pointer; align-self: flex-end; }
+.videoContainer { flex: 1; iframe { width: 100%; height: 100%; } }
+.emptyListText { color: #808080; font-size: 16px; text-align: center; margin-top: 40px; grid-column: 1/-1; }
