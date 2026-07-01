@@ -11,9 +11,6 @@
   padding-bottom: 50px;
 }
 
-// ==========================================================================
-// NAVBAR COM ESTILO ANTIGO (Logo NETFLIX + Links + Controles)
-// ==========================================================================
 .barraControlesCatalogo {
   display: flex;
   justify-content: space-between;
@@ -113,9 +110,9 @@
   }
 }
 
-// ==========================================================================
+// 
 // SEÇÃO DE FILMES (Estilo Vertical da foto antiga)
-// ==========================================================================
+// 
 .alinhamentoTituloBotao {
   padding: 20px 4% 0 4%;
 }
@@ -174,9 +171,9 @@
   }
 }
 
-// ==========================================================================
+// 
 // TELAS ADICIONAIS (Detalhes e Player)
-// ==========================================================================
+// 
 .secaoDetalhes {
   padding: 40px 4%;
 }
@@ -217,3 +214,87 @@
 .btnFecharPlayer { background: transparent; border: none; color: #fff; font-size: 18px; padding: 20px; cursor: pointer; align-self: flex-end; }
 .videoContainer { flex: 1; iframe { width: 100%; height: 100%; } }
 .emptyListText { color: #808080; font-size: 16px; text-align: center; margin-top: 40px; grid-column: 1/-1; }
+
+// classes da parte que fica salvo as avaliações 
+
+.containerFormularioAvaliacao {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.retanguloAvaliacaoSalva {
+  flex: 1.2; // Dá um pouquinho mais de peso visual para a lista de reviews
+  background-color: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  max-height: 280px; // Altura máxima firme para controlar o scroll
+  overflow-y: auto;  // Ativa o scroll vertical dinâmico caso acumule reviews
+  padding: 10px;
+
+  /* Customização básica da barra de rolagem para ficar discreta */
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+  }
+}
+
+.listaScrollAvaliacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; // Separação entre os comentários de cada perfil
+}
+
+.itemAvaliacaoCard {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid #e50914; // Borda vermelha charmosa da Netflix na lateral
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.cabecalhoCardAvaliacao {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.nomePerfilAutor {
+  font-weight: bold;
+  color: #fff;
+  font-size: 0.95rem;
+  text-transform: capitalize;
+}
+
+.formularioCampos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  h4 {
+    margin-bottom: 8px;
+    color: #aaa;
+    font-size: 0.9rem;
+  }
+}
+
+.perfilLogadoNav {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-right: 15px;
+  font-weight: 500;
+}
+
+.estrelaSalva {
+  color: #333;
+  font-size: 1rem;
+
+  &.ativa {
+    color: #ffb400;
+  }
+}

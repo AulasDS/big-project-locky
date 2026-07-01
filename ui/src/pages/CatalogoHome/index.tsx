@@ -12,56 +12,73 @@ interface Filme {
     imgUrl: string;
     posterCatalogoUrl: string;
     genero: string;
+    trailerUrl: string; 
+    ano: string; 
 }
 
-// Recebe a função aoSair criada no App.tsx
+// Criamos uma interface para a estrutura de cada avaliação individual
+interface Avaliacao {
+    perfil: string;
+    nota: number;
+    comentario: string;
+}
+
 interface CatalogoHomeProps {
     aoSair: () => void;
+    perfilAtivo: string; // Adicionado nas Props do componente
 }
 
-export default function CatalogoHome({ aoSair }: CatalogoHomeProps) {
-    const filmesIniciais: Filme[] = [
-        {
-            id: 'o-chamado',
-            titulo: 'O Chamado',
-            genero: 'terror',
-            classificacao: 'A14',
-            duracao: '1h 55min',
-            imgUrl: 'https://placehold.co/800x450/8b0000/ffffff?text=O+Chamado',
-            posterCatalogoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4uB62UbQJKH0auZpCkfmqOUmiGup7lb-gmUlaI-cNQg&s=10',
-            sinopse: 'Uma jornalista decide investigar a misteriosa morte de sua sobrinha, que faleceu após assistir a uma fita de vídeo amaldiçoada que dizem causar a morte de quem a assiste em sete dias.'
-        },
-        {
-            id: 'invocacao-do-mal',
-            titulo: 'Invocação do Mal',
-            genero: 'terror',
-            classificacao: 'A14',
-            duracao: '1h 52min',
-            imgUrl: 'https://placehold.co/800x450/5c0000/ffffff?text=Invocacao+do+Mal',
-            posterCatalogoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzCgZyfWzUNR3yBEcwNwGT8bWorUIZunh79UCLUEXaSg&s',
-            sinopse: 'Investigadores paranormais trabalham para ajudar uma família aterrorizada por uma presença sombria em sua fazenda isolada.'
-        },
-        {
-            id: 'gente-grande',
-            titulo: 'Gente Grande',
-            genero: 'comedia',
-            classificacao: 'Livre',
-            duracao: '1h 42min',
-            imgUrl: 'https://placehold.co/800x450/1f3a60/ffffff?text=Gente+Grande',
-            posterCatalogoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKuGNf4B5WGu-TWDnjA7_2-FrgxZAZ0KhOk6Eft_y6Jw&s',
-            sinopse: 'Após a morte de seu treinador de basquete de infância, cinco amigos e suas famílias decidem passar o fim de semana do feriado juntos.'
-        },
-        {
-            id: 'as-branquelas',
-            titulo: 'As Branquelas',
-            genero: 'comedia',
-            classificacao: 'A12',
-            duracao: '1h 49min',
-            imgUrl: 'https://placehold.co/800x450/0f2537/ffffff?text=As+Branquelas',
-            posterCatalogoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLvNmzF-bAt4hylQzrjvvX2P66I-TkYPyizCmOXUmFrg&s=10',
-            sinopse: 'Dois agentes do FBI negros se disfarçam de herdeiras brancas da alta sociedade para desmascarar um plano de sequestro.'
-        }
-    ];
+export default function CatalogoHome({ aoSair, perfilAtivo }: CatalogoHomeProps) {
+   const filmesIniciais: Filme[] = [
+    {
+        id: 'o-chamado',
+        titulo: 'O Chamado',
+        genero: 'terror',
+        classificacao: 'A14',
+        duracao: '1h 55min',
+        imgUrl: 'https://placehold.co/800x450/8b0000/ffffff?text=O+Chamado',
+        posterCatalogoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4uB62UbQJKH0auZpCkfmqOUmiGup7lb-gmUlaI-cNQg&s=10',
+        sinopse: 'Uma jornalista decide investigar a misteriosa morte de sua sobrinha, que faleceu após assistir a uma fita de vídeo amaldiçoada que dizem causar a morte de quem a assiste em sete dias.',
+        trailerUrl: 'https://www.youtube.com/embed/Psmv7Z8Vjg?autoplay=1',
+        ano: '2006'
+    },
+    {
+        id: 'invocacao-do-mal',
+        titulo: 'Invocação do Mal',
+        genero: 'terror',
+        classificacao: 'A14',
+        duracao: '1h 52min',
+        imgUrl: 'https://placehold.co/800x450/5c0000/ffffff?text=Invocacao+do+Mal',
+        posterCatalogoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzCgZyfWzUNR3yBEcwNwGT8bWorUIZunh79UCLUEXaSg&s',
+        sinopse: 'Investigadores paranormais trabalham para ajudar uma família aterrorizada por uma presença sombria em sua fazenda isolada.',
+        trailerUrl: 'https://www.youtube.com/embed/GQrrXceHn2E?autoplay=1',
+        ano: '2013'
+    },
+    {
+        id: 'gente-grande',
+        titulo: 'Gente Grande',
+        genero: 'comedia',
+        classificacao: 'Livre',
+        duracao: '1h 42min',
+        imgUrl: 'https://placehold.co/800x450/1f3a60/ffffff?text=Gente+Grande',
+        posterCatalogoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKuGNf4B5WGu-TWDnjA7_2-FrgxZAZ0KhOk6Eft_y6Jw&s',
+        sinopse: 'Após a morte de seu treinador de basquete de infância, cinco amigos e suas famílias decidem passar o fim de semana do feriado juntos.',
+        trailerUrl: 'https://www.youtube.com/embed/UObB2XGqi-Q?autoplay=1',
+        ano: '2010'
+    },
+    {
+        id: 'as-branquelas',
+        titulo: 'As Branquelas',
+        genero: 'comedia',
+        classificacao: 'A12',
+        duracao: '1h 49min',
+        imgUrl: 'https://placehold.co/800x450/0f2537/ffffff?text=As+Branquelas',
+        posterCatalogoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLvNmzF-bAt4hylQzrjvvX2P66I-TkYPyizCmOXUmFrg&s=10',
+        sinopse: 'Dois agentes do FBI negros se disfarçam de herdeiras brancas da alta sociedade para desmascarar um plano de sequestro.',
+        trailerUrl: 'https://www.youtube.com/embed/aeVkbNka9HM?autoplay=1',
+        ano: '2004'
+    }
+];
 
     const [telaAtiva, setTelaAtiva] = useState<'home' | 'detalhes' | 'player'>('home');
     const [visualizandoMinhaLista, setVisualizandoMinhaLista] = useState<boolean>(false);
@@ -75,7 +92,9 @@ export default function CatalogoHome({ aoSair }: CatalogoHomeProps) {
     const [filmeAtual, setFilmeAtual] = useState<Filme | null>(null);
     const [notaSelecionada, setNotaSelecionada] = useState<number>(0);
     const [comentario, setComentario] = useState<string>('');
-    const [historicoAvaliacoes, setHistoricoAvaliacoes] = useState<Record<string, { nota: number; comentario: string }>>({});
+    
+    // Agora o histórico aceita um Array de Avaliações para cada ID de filme
+    const [historicoAvaliacoes, setHistoricoAvaliacoes] = useState<Record<string, Avaliacao[]>>({});
     const [mostrarSucesso, setMostrarSucesso] = useState<boolean>(false);
 
     useEffect(() => {
@@ -91,10 +110,15 @@ export default function CatalogoHome({ aoSair }: CatalogoHomeProps) {
 
     const abrirDetalhes = (filme: Filme) => {
         setFilmeAtual(filme);
-        const avaliacaoExistente = historicoAvaliacoes[filme.id];
-        if (avaliacaoExistente) {
-            setNotaSelecionada(avaliacaoExistente.nota);
-            setComentario(avaliacaoExistente.comentario);
+        
+        // Busca a lista de avaliações do filme
+        const avaliacoesDoFilme = historicoAvaliacoes[filme.id] || [];
+        // Vemos se o perfil logado no momento já tem uma avaliação nele
+        const minhaAvaliacaoExistente = avaliacoesDoFilme.find(a => a.perfil === perfilAtivo);
+        
+        if (minhaAvaliacaoExistente) {
+            setNotaSelecionada(minhaAvaliacaoExistente.nota);
+            setComentario(minhaAvaliacaoExistente.comentario);
         } else {
             setNotaSelecionada(0);
             setComentario('');
@@ -112,10 +136,24 @@ export default function CatalogoHome({ aoSair }: CatalogoHomeProps) {
 
     const salvarAvaliacao = () => {
         if (!filmeAtual) return;
+
+        const listaAntiga = historicoAvaliacoes[filmeAtual.id] || [];
+        
+        // Remove a avaliação anterior deste mesmo perfil (caso ele esteja editando)
+        const listaFiltrada = listaAntiga.filter(a => a.perfil !== perfilAtivo);
+
+        // Cria a nova avaliação contendo quem fez
+        const novaAvaliacao: Avaliacao = {
+            perfil: perfilAtivo,
+            nota: notaSelecionada,
+            comentario: comentario
+        };
+
         setHistoricoAvaliacoes({
             ...historicoAvaliacoes,
-            [filmeAtual.id]: { nota: notaSelecionada, comentario }
+            [filmeAtual.id]: [...listaFiltrada, novaAvaliacao]
         });
+
         setMostrarSucesso(true);
         setTimeout(() => setMostrarSucesso(false), 3000);
     };
@@ -126,56 +164,55 @@ export default function CatalogoHome({ aoSair }: CatalogoHomeProps) {
             {/* TELA PRINCIPAL DO CATÁLOGO */}
             {telaAtiva === 'home' && (
                 <div className={styles.telaHome}>
-                    
-              {/* NAV BAR REFEITA COM TUDO FUNCIONANDO */}
-<div className={styles.barraControlesCatalogo}>
-    <div className={styles.controlesEsquerda}>
-        {/* TEXTO DA MARCA ADICIONADO PARA FICAR IGUAL ANTES */}
-        <span className={styles.logoNetflix}>NETFLIX</span>
-        
-        <span 
-            className={`${styles.abaLink} ${!visualizandoMinhaLista ? styles.abaAtiva : ''}`}
-            onClick={() => setVisualizandoMinhaLista(false)}
-        >
-            Início
-        </span>
-        <span 
-            className={`${styles.abaLink} ${visualizandoMinhaLista ? styles.abaAtiva : ''}`}
-            onClick={() => setVisualizandoMinhaLista(true)}
-        >
-            Minha Lista
-        </span>
-    </div>
+                    <div className={styles.barraControlesCatalogo}>
+                        <div className={styles.controlesEsquerda}>
+                            <span className={styles.logoNetflix}>NETFLIX</span>
+                            <span 
+                                className={`${styles.abaLink} ${!visualizandoMinhaLista ? styles.abaAtiva : ''}`}
+                                onClick={() => setVisualizandoMinhaLista(false)}
+                            >
+                                Início
+                            </span>
+                            <span 
+                                className={`${styles.abaLink} ${visualizandoMinhaLista ? styles.abaAtiva : ''}`}
+                                onClick={() => setVisualizandoMinhaLista(true)}
+                            >
+                                Minha Lista
+                            </span>
+                        </div>
 
-    <div className={styles.controlesDireita}>
-        <input 
-            type="text"
-            placeholder="Pesquisar por nome..."
-            value={pesquisa}
-            onChange={(e) => setPesquisa(e.target.value)}
-            className={styles.searchInputNav}
-        />
+                        <div className={styles.controlesDireita}>
+                            {/* Mostra uma mensagem sutil indicando qual perfil está ativo na Navbar */}
+                            <span className={styles.perfilLogadoNav}>Olá, {perfilAtivo}!</span>
+                            
+                            <input 
+                                type="text"
+                                placeholder="Pesquisar por nome..."
+                                value={pesquisa}
+                                onChange={(e) => setPesquisa(e.target.value)}
+                                className={styles.searchInputNav}
+                            />
 
-        {!visualizandoMinhaLista && (
-            <div className={styles.filtroContainer}>
-                <label htmlFor="genero">Gênero: </label>
-                <select 
-                    id="genero" 
-                    value={generoSelecionado} 
-                    onChange={(e) => setGeneroSelecionado(e.target.value)}
-                >
-                    <option value="todos">Todos</option>
-                    <option value="terror">Terror</option>
-                    <option value="comedia">Comédia</option>
-                </select>
-            </div>
-        )}
-        
-        <button className={styles.btnTrocarPerfil} onClick={aoSair}>
-            Sair
-        </button>
-    </div>
-</div>
+                            {!visualizandoMinhaLista && (
+                                <div className={styles.filtroContainer}>
+                                    <label htmlFor="genero">Gênero: </label>
+                                    <select 
+                                        id="genero" 
+                                        value={generoSelecionado} 
+                                        onChange={(e) => setGeneroSelecionado(e.target.value)}
+                                    >
+                                        <option value="todos">Todos</option>
+                                        <option value="terror">Terror</option>
+                                        <option value="comedia">Comédia</option>
+                                    </select>
+                                </div>
+                            )}
+                            
+                            <button className={styles.btnTrocarPerfil} onClick={aoSair}>
+                                Sair
+                            </button>
+                        </div>
+                    </div>
 
                     <div className={styles.alinhamentoTituloBotao}>
                         <h2 className={styles.tituloPagina}>
@@ -226,7 +263,7 @@ export default function CatalogoHome({ aoSair }: CatalogoHomeProps) {
                             <h1 className={styles.tituloFilme}>{filmeAtual.titulo}</h1>
 
                             <div className={styles.metadados}>
-                                <span className={styles.ano}>2026</span>
+                                <span className={styles.ano}>{filmeAtual.ano}</span>
                                 <span className={styles.classificacaoEtaria}>{filmeAtual.classificacao}</span>
                                 <span className={styles.duracao}>{filmeAtual.duracao}</span>
                             </div>
@@ -234,34 +271,74 @@ export default function CatalogoHome({ aoSair }: CatalogoHomeProps) {
                             <p className={styles.sinopse}>{filmeAtual.sinopse}</p>
 
                             <div className={styles.botoesAcoes}>
-                                <button className={styles.btnAssistir} onClick={() => setTelaAtiva('player')}>▶ Assistir</button>
+                                <button className={styles.btnAssistir} onClick={() => setTelaAtiva('player')}>▶ Assistir Trailer</button>
                                 <button className={styles.btnMinhaLista} onClick={() => alternarMinhaLista(filmeAtual)}>
                                     {minhaLista.some(f => f.id === filmeAtual.id) ? "✓ Na Minha Lista" : "+ Minha Lista"}
                                 </button>
                             </div>
 
                             <div className={styles.secaoAvaliacao}>
-                                <h3>Deixe sua Avaliação</h3>
-                                <div className={styles.estrelas}>
-                                    {[1, 2, 3, 4, 5].map((estrela) => (
-                                        <span 
-                                            key={estrela}
-                                            className={`${styles.estrela} ${notaSelecionada >= estrela ? styles.ativa : ''}`} 
-                                            onClick={() => setNotaSelecionada(estrela)}
-                                        >
-                                            ★
-                                        </span>
-                                    ))}
+                                <h3>Avaliações de Quem Assistiu</h3>
+                                
+                                <div className={styles.containerFormularioAvaliacao}>
+                                    
+                                    {/* Retângulo da esquerda que exibe TODAS as avaliações com Scroll Vertical */}
+                                    <div className={styles.retanguloAvaliacaoSalva}>
+                                        {historicoAvaliacoes[filmeAtual.id] && historicoAvaliacoes[filmeAtual.id].length > 0 ? (
+                                            <div className={styles.listaScrollAvaliacoes}>
+                                                {historicoAvaliacoes[filmeAtual.id].map((item, index) => (
+                                                    <div key={index} className={styles.itemAvaliacaoCard}>
+                                                        <div className={styles.cabecalhoCardAvaliacao}>
+                                                            {/* Renderiza o nome do perfil dinamicamente */}
+                                                            <span className={styles.nomePerfilAutor}>{item.perfil}</span>
+                                                            <div className={styles.estrelasSalvas}>
+                                                                {[1, 2, 3, 4, 5].map((estrela) => (
+                                                                    <span 
+                                                                        key={estrela}
+                                                                        className={`${styles.estrelaSalva} ${item.nota >= estrela ? styles.ativa : ''}`}
+                                                                    >
+                                                                        ★
+                                                                    </span>
+                                                                ))}
+                                                            </div>
+                                                        </div>
+                                                        <p className={styles.comentarioSalvo}>
+                                                            {item.comentario || <em>Sem comentário escrito.</em>}
+                                                        </p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        ) : (
+                                            <p className={styles.semAvaliacaoText}>Nenhum perfil avaliou este filme ainda.</p>
+                                        )}
+                                    </div>
+
+                                    {/* Formulário da direita para criar/editar a sua própria avaliação */}
+                                    <div className={styles.formularioCampos}>
+                                        <h4>Sua opinião ({perfilAtivo}):</h4>
+                                        <div className={styles.estrelas}>
+                                            {[1, 2, 3, 4, 5].map((estrela) => (
+                                                <span 
+                                                    key={estrela}
+                                                    className={`${styles.estrela} ${notaSelecionada >= estrela ? styles.ativa : ''}`} 
+                                                    onClick={() => setNotaSelecionada(estrela)}
+                                                >
+                                                    ★
+                                                </span>
+                                            ))}
+                                        </div>
+                                        <textarea 
+                                            placeholder="Deixe sua nota e comentário sobre o filme..."
+                                            value={comentario}
+                                            onChange={(e) => setComentario(e.target.value)}
+                                        />
+                                        <button className={styles.btnSalvarAvaliacao} onClick={salvarAvaliacao}>
+                                            Salvar Avaliação
+                                        </button>
+                                        {mostrarSucesso && <div className={styles.mensagemSucesso}>Sua avaliação foi salva!</div>}
+                                    </div>
+
                                 </div>
-                                <textarea 
-                                    placeholder="Escreva um breve comentário sobre o filme..."
-                                    value={comentario}
-                                    onChange={(e) => setComentario(e.target.value)}
-                                />
-                                <button className={styles.btnSalvarAvaliacao} onClick={salvarAvaliacao}>
-                                    Salvar Avaliação
-                                </button>
-                                {mostrarSucesso && <div className={styles.mensagemSucesso}>Avaliação salva com sucesso!</div>}
                             </div>
                         </div>
                     </div>
@@ -269,19 +346,20 @@ export default function CatalogoHome({ aoSair }: CatalogoHomeProps) {
             )}
 
             {/* TELA PLAYER */}
-            {telaAtiva === 'player' && (
+            {telaAtiva === 'player' && filmeAtual && (
                 <div className={styles.secaoPlayer}>
                     <button className={styles.btnFecharPlayer} onClick={() => setTelaAtiva('detalhes')}>✕ Fechar</button>
                     <div className={styles.videoContainer}>
                         <iframe 
-                            src="https://www.youtube.com/embed/jfK7XTIbIdI?autoplay=1" 
+                            src={filmeAtual.trailerUrl} 
                             frameBorder="0" 
-                            allow="autoplay; encrypted-media" 
+                            allow="autoplay; encrypted-media; picture-in-picture" 
                             allowFullScreen
                         ></iframe>
                     </div>
                 </div>
             )}
+
         </div>
     );
 }

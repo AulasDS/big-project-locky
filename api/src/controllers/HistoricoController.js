@@ -19,8 +19,7 @@ class HistoricoController {
                 ultimaVezAssistido: new Date()
             };
 
-            // Em uma API real da Netflix, aqui faríamos um "Upsert": 
-            // Se o histórico já existe, apenas atualiza o tempo. Se não, cria um novo.
+
             const newHistorico = await Historico.create(historicoData);
             
             return res.status(201).json({ 
