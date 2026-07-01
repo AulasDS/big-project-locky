@@ -36,10 +36,10 @@ export default function CatalogoHome({ aoSair, perfilAtivo }: CatalogoHomeProps)
         genero: 'terror',
         classificacao: 'A14',
         duracao: '1h 55min',
-        imgUrl: 'https://placehold.co/800x450/8b0000/ffffff?text=O+Chamado',
-        posterCatalogoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4uB62UbQJKH0auZpCkfmqOUmiGup7lb-gmUlaI-cNQg&s=10',
+        imgUrl: 'https://i.pinimg.com/736x/3b/36/99/3b3699ce5d3a8459fd17dcece60c2c7a.jpg',
+        posterCatalogoUrl: 'https://i.pinimg.com/736x/3b/36/99/3b3699ce5d3a8459fd17dcece60c2c7a.jpg',
         sinopse: 'Uma jornalista decide investigar a misteriosa morte de sua sobrinha, que faleceu após assistir a uma fita de vídeo amaldiçoada que dizem causar a morte de quem a assiste em sete dias.',
-        trailerUrl: 'https://www.youtube.com/embed/Psmv7Z8Vjg?autoplay=1',
+        trailerUrl: 'https://www.youtube.com/embed/rK4FC_V0o1Q?autoplay=1',
         ano: '2006'
     },
     {
@@ -48,7 +48,7 @@ export default function CatalogoHome({ aoSair, perfilAtivo }: CatalogoHomeProps)
         genero: 'terror',
         classificacao: 'A14',
         duracao: '1h 52min',
-        imgUrl: 'https://placehold.co/800x450/5c0000/ffffff?text=Invocacao+do+Mal',
+        imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzCgZyfWzUNR3yBEcwNwGT8bWorUIZunh79UCLUEXaSg&s',
         posterCatalogoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzCgZyfWzUNR3yBEcwNwGT8bWorUIZunh79UCLUEXaSg&s',
         sinopse: 'Investigadores paranormais trabalham para ajudar uma família aterrorizada por uma presença sombria em sua fazenda isolada.',
         trailerUrl: 'https://www.youtube.com/embed/GQrrXceHn2E?autoplay=1',
@@ -60,7 +60,7 @@ export default function CatalogoHome({ aoSair, perfilAtivo }: CatalogoHomeProps)
         genero: 'comedia',
         classificacao: 'Livre',
         duracao: '1h 42min',
-        imgUrl: 'https://placehold.co/800x450/1f3a60/ffffff?text=Gente+Grande',
+        imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKuGNf4B5WGu-TWDnjA7_2-FrgxZAZ0KhOk6Eft_y6Jw&s',
         posterCatalogoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKuGNf4B5WGu-TWDnjA7_2-FrgxZAZ0KhOk6Eft_y6Jw&s',
         sinopse: 'Após a morte de seu treinador de basquete de infância, cinco amigos e suas famílias decidem passar o fim de semana do feriado juntos.',
         trailerUrl: 'https://www.youtube.com/embed/UObB2XGqi-Q?autoplay=1',
@@ -72,11 +72,35 @@ export default function CatalogoHome({ aoSair, perfilAtivo }: CatalogoHomeProps)
         genero: 'comedia',
         classificacao: 'A12',
         duracao: '1h 49min',
-        imgUrl: 'https://placehold.co/800x450/0f2537/ffffff?text=As+Branquelas',
+        imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLvNmzF-bAt4hylQzrjvvX2P66I-TkYPyizCmOXUmFrg&s=10',
         posterCatalogoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLvNmzF-bAt4hylQzrjvvX2P66I-TkYPyizCmOXUmFrg&s=10',
         sinopse: 'Dois agentes do FBI negros se disfarçam de herdeiras brancas da alta sociedade para desmascarar um plano de sequestro.',
         trailerUrl: 'https://www.youtube.com/embed/aeVkbNka9HM?autoplay=1',
         ano: '2004'
+    },
+    {
+        id: 'atraves-da-minha-janela',
+        titulo: 'Através da Minha Janela',
+        genero: 'romance',
+        classificacao: 'A16',
+        duracao: '1h 53min',
+        imgUrl: 'https://i.pinimg.com/736x/4b/4b/6a/4b4b6aa34905d24957b061b97fdb4a8e.jpg',
+        posterCatalogoUrl: 'https://i.pinimg.com/736x/4b/4b/6a/4b4b6aa34905d24957b061b97fdb4a8e.jpg',
+        sinopse: 'acompanha Raquel, uma jovem apaixonada secretamente por seu vizinho misterioso, Ares Hidalgo. Após descobrir que ele usa sua senha de Wi-Fi, Raquel o confronta, dando início a um jogo intenso de sedução, paixão e superação de diferenças.',
+        trailerUrl: 'https://www.youtube.com/embed/gyd3X62IcEM?autoplay=1',
+        ano: '2022'
+    },
+    {
+        id: 'la-la-land',
+        titulo: 'La La Land',
+        genero: 'romance',
+        classificacao: 'A12',
+        duracao: '2h 8min',
+        imgUrl: 'https://upload.wikimedia.org/wikipedia/pt/c/c0/La_La_Land_%28filme%29.png',
+        posterCatalogoUrl: 'https://upload.wikimedia.org/wikipedia/pt/c/c0/La_La_Land_%28filme%29.png',
+        sinopse: 'Aspirante a atriz Mia e o pianista de jazz Sebastian se apaixonam em Los Angeles enquanto perseguem seus sonhos. À medida que o sucesso chega, eles enfrentam dilemas que testam seu relacionamento.',
+        trailerUrl: 'https://www.youtube.com/embed/zXvgkkNMi-4?autoplay=1',
+        ano: '2016'
     }
 ];
 
@@ -204,6 +228,7 @@ export default function CatalogoHome({ aoSair, perfilAtivo }: CatalogoHomeProps)
                                         <option value="todos">Todos</option>
                                         <option value="terror">Terror</option>
                                         <option value="comedia">Comédia</option>
+                                        <option value="romance">Romance</option>
                                     </select>
                                 </div>
                             )}

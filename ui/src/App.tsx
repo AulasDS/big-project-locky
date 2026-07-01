@@ -4,9 +4,6 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 
 // Componentes Globais
 import CatalogoHome from './pages/CatalogoHome';
-import GerenciarCatalogo from './pages/GerenciarCatalogo';
-import FormularioFilme from './pages/FormularioFilme';
-import MinhaLista from './pages/MinhaLista';
 
 function App() {
   // Estado que controla qual perfil está ativo no topo do app
@@ -51,10 +48,6 @@ function App() {
       <Routes>
         {/* Adicionada a prop perfilAtivo aqui */}
         <Route path='/' element={<CatalogoHome aoSair={deslogarPerfil} perfilAtivo={perfilAtivo} />} />
-        <Route path='/gerenciar' element={<GerenciarCatalogo />} />
-        <Route path='/filme/novo' element={<FormularioFilme />} />
-        <Route path='/filme/editar/:id' element={<FormularioFilme />} />
-        <Route path='/minha-lista' element={<MinhaLista />} />
         <Route path='*' element={<Navigate to="/" />} />
       </Routes>
     </div>

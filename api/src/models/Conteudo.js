@@ -1,13 +1,16 @@
 const mongoose = require('mongoose');
 
-// 1. Model do conteudo
 const ConteudoSchema = new mongoose.Schema({
     titulo: { type: String, required: true },
     sinopse: { type: String, required: true },
     tipo: { type: String, required: true, enum: ['Filme', 'Série'] },
     genero: { type: String, required: true },
-    anoLancamento: { type: Number },
-    classificacaoIndicativa: { type: String, default: 'L' },
+    anoLancamento: { type: String }, // Mantido como string para bater com o "ano" do front
+    classificacaoIndicativa: { type: String, default: 'Livre' },
+    duracao: { type: String },
+    imgUrl: { type: String },
+    posterCatalogoUrl: { type: String },
+    trailerUrl: { type: String },
     dataCriacao: { type: Date, default: Date.now }
 });
 
